@@ -9,7 +9,7 @@ generateBtn.addEventListener("click", function() {
   confirm("Do you need uppercase letters?");
   confirm("Do you need lowercase letters?");
   confirm("Do you need numbers?");
-  confirm("Do you need symbols?");
+  confirm("Do you need special characters?");
 
   var length = prompt("Choose the length of your password from 8-128 characters.")
 
