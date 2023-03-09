@@ -5,7 +5,7 @@
 var generateBtn = document.querySelector("#generate");
 
 
-generateBtn.addEventListener("click", function() {
+generateBtn.addEventListener("click", function verifyInputs() {
   var uppercase = confirm("Do you need uppercase letters?");
   var lowercase = confirm("Do you need lowercase letters?");
   var number = confirm("Do you need numbers?");
@@ -16,9 +16,9 @@ generateBtn.addEventListener("click", function() {
     return;
   }
 
-  var length = prompt("Choose the length of your password from 8-128 characters.")
+  var range = prompt("Choose the length of your password from 8-128 characters.")
 
-  if (length < 8 || length > 128) {
+  if (range < 8 || range > 128) {
     alert("You must choose a number between 8 - 128.")
     return;
   }
