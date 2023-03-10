@@ -3,7 +3,7 @@ var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz".split("");
 var numberChoices = "1234567890".split("");
 var symbolChoices = "!@#$%^&*".split("");
-var passwordChars = [];
+
 
 
 // Get references to the #generate element
@@ -11,33 +11,35 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {  
+  var passwordChars = [];
+  passwordArray = [];
   var uppercase = confirm("Do you need uppercase letters?");
-   console.log("Use uppercase?", uppercase);
+   //console.log("Use uppercase?", uppercase);
   if (uppercase) {
     passwordChars = passwordChars.concat(uppercaseLetters);
   }
-    console.log(passwordChars);
+    //console.log(passwordChars);
 
   var lowercase = confirm("Do you need lowercase letters?");
-  console.log("Use lowercase?", lowercase);
+  //console.log("Use lowercase?", lowercase);
   if (lowercase) {
     passwordChars = passwordChars.concat(lowercaseLetters);
   }
-    console.log(passwordChars);
+    //console.log(passwordChars);
 
   var number = confirm("Do you need numbers?");
-  console.log("Use numbers?", number);
+  //console.log("Use numbers?", number);
   if (number) {
     passwordChars = passwordChars.concat(numberChoices);
   }
-    console.log(passwordChars);
+    //console.log(passwordChars);
 
   var symbol = confirm("Do you need special characters?");
-  console.log("Use symbols?", symbol);
+  //console.log("Use symbols?", symbol);
   if (symbol) {
     passwordChars = passwordChars.concat(symbolChoices);
   }
-    console.log(passwordChars);
+    //console.log(passwordChars);
   
   if (!uppercase && !lowercase && !number && !symbol) {
     alert("You must select at least one character type for your password.")
@@ -53,7 +55,13 @@ function generatePassword() {
   else {
     alert("Your selections have been recorded.")
    }
-   return 
+
+   for (var i = 0; i < range; i++) {
+    var index = Math.floor(Math.random() * passwordChars.length);
+    var passwordText = passwordChars[index];
+    passwordArray.push(passwordText);
+   }
+   return passwordArray.join("");
   }
   ;
 
@@ -66,8 +74,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-  var index = Math.floor(Math.random() * passwordChars.length);
-  var completePassword = passwordChars[index];
+
 
 }
 
