@@ -10,33 +10,26 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {  
   var passwordChars = [];
   passwordArray = [];
+
   var uppercase = confirm("Do you need uppercase letters?");
-   console.log("Use uppercase?", uppercase);
   if (uppercase) {
     passwordChars = passwordChars.concat(uppercaseLetters);
   }
-    console.log(passwordChars);
 
   var lowercase = confirm("Do you need lowercase letters?");
-  console.log("Use lowercase?", lowercase);
   if (lowercase) {
     passwordChars = passwordChars.concat(lowercaseLetters);
   }
-    console.log(passwordChars);
 
   var number = confirm("Do you need numbers?");
-  console.log("Use numbers?", number);
   if (number) {
     passwordChars = passwordChars.concat(numberChoices);
   }
-    console.log(passwordChars);
 
   var symbol = confirm("Do you need special characters?");
-  console.log("Use symbols?", symbol);
   if (symbol) {
     passwordChars = passwordChars.concat(symbolChoices);
   }
-    console.log(passwordChars);
   
   if (!uppercase && !lowercase && !number && !symbol) {
     alert("You must select at least one character type for your password.")
